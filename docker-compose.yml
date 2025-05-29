@@ -1,0 +1,9 @@
+services:
+  empty_proyect:
+    build: ./empty_proyect
+    ports:
+      - "3060:3060"
+    environment:
+      - PORT=3060
+      - REACT_APP_PORT=3060
+    restart: always

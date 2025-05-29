@@ -1,0 +1,90 @@
+/*body {
+  cursor: url("assets/brush-fill.svg") 4 12, pointer;
+}*/
+
+a{
+  color: white !important;
+}
+
+.App {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  scroll-behavior: smooth;
+  overflow-x: hidden; /* Prevenir scroll horizontal */
+  width: 100vw; /* Asegurar que ocupe todo el ancho */
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Aplicar el escalado solo en móviles */
+@media screen and (max-width: 1023px) {
+  .sections-container {
+    transform: scale(1);
+    transform-origin: center center;
+    margin: auto;
+    /*margin-top: 60px;*/
+  }
+}
+
+section {
+  height: 100vh; /* Cambiamos min-height por height */
+  width: 100%;
+  scroll-snap-align: start;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: none; /* Color de fondo base */
+  scroll-snap-stop: always;
+}
+
+/* Solo aplicar background-image para desktop */
+@media screen and (min-width: 1024px) {
+  section {
+    width: 100vw; /* Asegurar que la sección ocupe todo el ancho */
+    max-width: 100vw; /* Prevenir desbordamiento */
+    overflow-x: hidden; /* Prevenir scroll horizontal */
+  }
+}
+
+/* Versión optimizada para mobile */
+@media screen and (max-width: 1023px) {
+  section {
+    width: 100vw; /* Asegurar que la sección ocupe todo el ancho */
+    max-width: 100vw; /* Prevenir desbordamiento */
+    overflow-x: hidden; /* Prevenir scroll horizontal */
+    background-image: none; /* Eliminar imagen de fondo en mobile */
+  }
+}
